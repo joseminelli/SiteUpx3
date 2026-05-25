@@ -1,80 +1,100 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Casa Eficiente | MVP</title>
-</head>
-<body>
-	<header>
-		<p>Site simulador</p>
-		<h1>Casa Eficiente</h1>
-		<p>Selecione os itens da sua casa e acompanhe uma visão inicial de consumo e eficiência.</p>
-	</header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Casa Eficiente | MVP</title>
+		<link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <p class="kicker">Site simulador</p>
+        <h1>Simulador de eficiência residencial</h1>
+        <p class="lead">
+          Escolha os dispositivos da casa e tenha uma visão inicial de consumo,
+          eficiência e oportunidades de melhoria.
+        </p>
+      </header>
 
-	<main>
-		<section aria-labelledby="simulacao-title">
-			<h2 id="simulacao-title">Simulação da residência</h2>
+      <section class="grid" aria-labelledby="simulacao-title">
+        <div class="panel">
+          <h2 class="section-title" id="simulacao-title">
+            Simulação da residência
+          </h2>
 
-			<form>
-				<fieldset>
-					<legend>Iluminação</legend>
-					<label for="lampada">Tipo de lâmpada</label>
-					<select id="lampada" name="lampada">
-						<option>LED</option>
-						<option>Fluorescente</option>
-						<option>Incandescente</option>
-					</select>
-				</fieldset>
+          <form>
+            <fieldset>
+              <legend>Iluminação</legend>
+              <div class="field">
+                <label for="lampada">Tipo de lâmpada</label>
+                <select id="lampada" name="lampada">
+                  <option>LED</option>
+                  <option>Fluorescente</option>
+                  <option>Incandescente</option>
+                </select>
+              </div>
+            </fieldset>
 
-				<fieldset>
-					<legend>Eletrodomésticos</legend>
-					<label for="geladeira">Geladeira</label>
-					<select id="geladeira" name="geladeira">
-						<option>Inverter</option>
-						<option>Convencional</option>
-						<option>Antiga</option>
-					</select>
+            <fieldset>
+              <legend>Eletrodomésticos</legend>
+              <div class="field">
+                <label for="geladeira">Geladeira</label>
+                <select id="geladeira" name="geladeira">
+                  <option>Inverter</option>
+                  <option>Convencional</option>
+                  <option>Antiga</option>
+                </select>
+              </div>
 
-					<label for="tv">Televisão</label>
-					<select id="tv" name="tv">
-						<option>LED</option>
-						<option>LCD</option>
-						<option>Plasma</option>
-					</select>
-				</fieldset>
+              <div class="field">
+                <label for="tv">Televisão</label>
+                <select id="tv" name="tv">
+                  <option>LED</option>
+                  <option>LCD</option>
+                  <option>Plasma</option>
+                </select>
+              </div>
+            </fieldset>
 
-				<fieldset>
-					<legend>Energia renovável</legend>
-					<label for="solar">Usa energia solar?</label>
-					<select id="solar" name="solar">
-						<option>Sim</option>
-						<option>Não</option>
-					</select>
-				</fieldset>
+            <fieldset>
+              <legend>Energia renovável</legend>
+              <div class="field">
+                <label for="solar">Usa energia solar?</label>
+                <select id="solar" name="solar">
+                  <option>Sim</option>
+                  <option>Não</option>
+                </select>
+              </div>
+            </fieldset>
 
-				<button type="button">Calcular simulação</button>
-			</form>
-		</section>
+            <button type="button">Calcular simulação</button>
+          </form>
+        </div>
 
-		<section aria-labelledby="resultados-title">
-			<h2 id="resultados-title">Resultados da análise</h2>
+        <aside class="panel" aria-labelledby="resultados-title">
+          <h2 class="section-title" id="resultados-title">
+            Resultados da análise
+          </h2>
 
-			<article>
-				<h3>Nível de eficiência</h3>
-				<p>Exemplo de resultado que vai representar a pontuação final da casa.</p>
-			</article>
+          <div class="results">
+            <article class="result-card">
+              <h3>Nível de eficiência</h3>
+              <p>Espaço reservado para a pontuação geral da residência.</p>
+            </article>
 
-			<article>
-				<h3>Consumo total</h3>
-				<p>Exemplo de área para exibir o consumo estimado em kWh.</p>
-			</article>
+            <article class="result-card">
+              <h3>Consumo total</h3>
+              <p>Área prevista para mostrar a estimativa de consumo em kWh.</p>
+            </article>
 
-			<article>
-				<h3>Dicas de melhoria</h3>
-				<p>Exemplo de recomendações automáticas para reduzir gastos e desperdícios.</p>
-			</article>
-		</section>
-	</main>
-</body>
+            <article class="result-card">
+              <h3>Dicas de melhoria</h3>
+              <p>Bloco reservado para recomendações rápidas de economia.</p>
+            </article>
+          </div>
+        </aside>
+      </section>
+    </main>
+  </body>
 </html>
