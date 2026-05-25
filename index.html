@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Casa Eficiente | MVP</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
     <script src="script.js" defer></script>
   </head>
   <body>
@@ -26,6 +27,19 @@
 
           <form id="simulador-form">
             <fieldset>
+              <legend>Informações da residência</legend>
+              <div class="field">
+                <label for="moradores">Quantidade de moradores</label>
+                <input id="moradores" name="moradores" type="number" min="1" value="1" />
+              </div>
+
+              <div class="field">
+                <label for="agua">Consumo de água (m³/mês)</label>
+                <input id="agua" name="agua" type="number" min="0" step="0.1" value="10" />
+              </div>
+            </fieldset>
+
+            <fieldset>
               <legend>Iluminação</legend>
               <div class="field">
                 <label for="lampada">Tipo de lâmpada</label>
@@ -34,6 +48,10 @@
                   <option>Fluorescente</option>
                   <option>Incandescente</option>
                 </select>
+              </div>
+              <div class="field">
+                <label for="lampada-horas">Horas de uso diário</label>
+                <input id="lampada-horas" name="lampada-horas" type="number" min="0" step="0.5" value="4" />
               </div>
             </fieldset>
 
@@ -47,6 +65,10 @@
                   <option>Antiga</option>
                 </select>
               </div>
+              <div class="field">
+                <label for="geladeira-horas">Horas de uso diário</label>
+                <input id="geladeira-horas" name="geladeira-horas" type="number" min="0" step="0.5" value="24" />
+              </div>
 
               <div class="field">
                 <label for="tv">Televisão</label>
@@ -55,6 +77,10 @@
                   <option>LCD</option>
                   <option>Plasma</option>
                 </select>
+              </div>
+              <div class="field">
+                <label for="tv-horas">Horas de uso diário</label>
+                <input id="tv-horas" name="tv-horas" type="number" min="0" step="0.5" value="4" />
               </div>
             </fieldset>
 
@@ -66,6 +92,18 @@
                   <option>Sim</option>
                   <option>Não</option>
                 </select>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Tarifas</legend>
+              <div class="field">
+                <label for="tarifa-eletrica">Tarifa elétrica (R$/kWh)</label>
+                <input id="tarifa-eletrica" name="tarifa-eletrica" type="number" min="0" step="0.01" value="0.90" />
+              </div>
+              <div class="field">
+                <label for="tarifa-agua">Tarifa de água (R$/m³)</label>
+                <input id="tarifa-agua" name="tarifa-agua" type="number" min="0" step="0.01" value="5.00" />
               </div>
             </fieldset>
 
@@ -87,6 +125,24 @@
             <article class="result-card">
               <h3>Consumo total</h3>
               <p>Estimativa: <strong id="total-consumo">0 kWh/mês</strong></p>
+            </article>
+
+            <article class="result-card">
+              <h3>Consumo de água</h3>
+              <p>Estimativa: <strong id="total-agua">0 m³/mês</strong></p>
+            </article>
+
+            <article class="result-card">
+              <h3>Estimativa de custo mensal</h3>
+              <p>Total: <strong id="total-custo">R$ 0,00</strong></p>
+              <p class="muted">Eletricidade: <strong id="total-custo-eletrica">R$ 0,00</strong></p>
+              <p class="muted">Água: <strong id="total-custo-agua">R$ 0,00</strong></p>
+              <p class="muted">Por morador: <strong id="custo-por-pessoa">R$ 0,00</strong></p>
+            </article>
+
+            <article class="result-card">
+              <h3>Gráfico de consumo</h3>
+              <canvas id="consumo-chart" width="400" height="200" aria-label="Gráfico de consumo" role="img"></canvas>
             </article>
 
             <article class="result-card">

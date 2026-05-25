@@ -145,11 +145,13 @@ label {
   color: var(--muted);
 }
 
+input,
 select,
 button {
   font: inherit;
 }
 
+input,
 select {
   width: 100%;
   padding: 14px 16px;
@@ -237,4 +239,17 @@ button {
   h1 {
     font-size: 3rem;
   }
+}
+
+/* Chart sizing: keep chart compact and responsive */
+#consumo-chart {
+  width: 100% !important;
+  height: 200px !important;
+  max-height: 320px;
+  display: block;
+}
+
+.result-card canvas {
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
 }
